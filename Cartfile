@@ -1,0 +1,4 @@
+github "rs/SDWebImage"
+github "AFNetworking/AFNetworking"
+github "SVProgressHUD/SVProgressHUD"
+github "ibireme/YYKit"
