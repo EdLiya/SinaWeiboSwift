@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeTableViewController: BaseTableViewController {
-
+    /// 记录当前是否是展开
+    var isPresent: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +22,26 @@ class HomeTableViewController: BaseTableViewController {
         
         // 初始化导航条按钮
         setupNavgationItem()
+        
+        // 3.注册通知, 监听菜单
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: PopoverAnimatorWillShowNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: PopoverAnimatorWilldismissNotificationName, object: nil)
+        
     }
 
+    deinit {
+        // 移除通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    /**
+     修改标题按钮的状态
+     */
+    @objc func change() {
+        let titleBtn = navigationItem.titleView as! TitleButton
+        titleBtn.isSelected = titleBtn.isSelected
+        
+    }
     // MARK: - 内部控制方法
     /**
      初始化导航条按钮
@@ -40,15 +60,43 @@ class HomeTableViewController: BaseTableViewController {
    @objc func titleBtnClick(_ btn :UIButton) {
     
         btn.isSelected = !btn.isSelected
+    
+        let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        vc?.transitioningDelegate = popverAnimator // 交给专门负责转场动画的类处理
+        vc?.modalPresentationStyle = .custom
+    
+        present(vc!, animated: true) {
+        
+        }
+        // 2.1设置转场代理
+        // 默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
+        // 如果自定义转场, 那么就不会移除以前控制器的view
     }
 
+    
     @objc func letBtnClick() {
         print(#function)
     }
     
     @objc func rightBtnClick() {
         print(#function)
+        let sb  = UIStoryboard(name: "QRCodeViewController", bundle: nil)
+        let vc  = sb.instantiateInitialViewController()
+        
+        present(vc!, animated: true) {
+            
+        }
     }
+    
+    // MARK: - 懒加载
+    /// 一定要定义一个属性来报错自定义转场对象, 否则会报错
+    private lazy var popverAnimator : PopoverAnimator = {
+        let pa = PopoverAnimator()
+        pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 200)
+        return pa
+    }()
+    
     
     // MARK: - Table view data source
 
@@ -62,59 +110,7 @@ class HomeTableViewController: BaseTableViewController {
         return 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
+

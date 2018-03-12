@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0329380F2056C98A007415A9 /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0329380E2056C98A007415A9 /* QRCodeViewController.storyboard */; };
+		032938112056CACA007415A9 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938102056CACA007415A9 /* QRCodeViewController.swift */; };
+		032938132056D65E007415A9 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938122056D65E007415A9 /* NetWorkTools.swift */; };
 		7A2D7F8A20504E56004FC401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F8920504E56004FC401 /* AppDelegate.swift */; };
 		7A2D7F9120504E56004FC401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9020504E56004FC401 /* Assets.xcassets */; };
 		7A2D7F9F20504E57004FC401 /* SinaWeiboSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9E20504E57004FC401 /* SinaWeiboSwiftTests.swift */; };
@@ -26,6 +29,9 @@
 		7AAA66D02054D8C90006DC5C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA66CF2054D8C90006DC5C /* VisitorView.swift */; };
 		7AAA66D22055891C0006DC5C /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA66D12055891C0006DC5C /* UIBarButtonItem+Category.swift */; };
 		7AAA66D420558D360006DC5C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA66D320558D360006DC5C /* TitleButton.swift */; };
+		7AAA66D6205592B80006DC5C /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA66D5205592B80006DC5C /* PopoverViewController.storyboard */; };
+		7AAA6714205679AB0006DC5C /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA6713205679AB0006DC5C /* PopoverPresentationController.swift */; };
+		7AAA67162056865F0006DC5C /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA67152056865F0006DC5C /* PopoverAnimator.swift */; };
 		B22D49F9A6E6AF090FFDFC0F /* Pods_SinaWeiboSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D85783C690FF1E36C649963 /* Pods_SinaWeiboSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0329380E2056C98A007415A9 /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
+		032938102056CACA007415A9 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		032938122056D65E007415A9 /* NetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		721D07410CABE70FE25A706A /* Pods-SinaWeiboSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiboSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiboSwift/Pods-SinaWeiboSwift.release.xcconfig"; sourceTree = "<group>"; };
 		7A2D7F8620504E56004FC401 /* SinaWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2D7F8920504E56004FC401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +82,9 @@
 		7AAA66CF2054D8C90006DC5C /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		7AAA66D12055891C0006DC5C /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		7AAA66D320558D360006DC5C /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		7AAA66D5205592B80006DC5C /* PopoverViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
+		7AAA6713205679AB0006DC5C /* PopoverPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		7AAA67152056865F0006DC5C /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		9D85783C690FF1E36C649963 /* Pods_SinaWeiboSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeiboSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAD87AA74800B5605023A3F /* Pods-SinaWeiboSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiboSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiboSwift/Pods-SinaWeiboSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +241,9 @@
 		7A2D7FC720505182004FC401 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				7AAA66D5205592B80006DC5C /* PopoverViewController.storyboard */,
+				7AAA6713205679AB0006DC5C /* PopoverPresentationController.swift */,
+				7AAA67152056865F0006DC5C /* PopoverAnimator.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -236,6 +251,8 @@
 		7A2D7FC820505182004FC401 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				0329380E2056C98A007415A9 /* QRCodeViewController.storyboard */,
+				032938102056CACA007415A9 /* QRCodeViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -300,6 +317,7 @@
 		7A2D7FD020505182004FC401 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				032938122056D65E007415A9 /* NetWorkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -436,8 +454,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AAA66D6205592B80006DC5C /* PopoverViewController.storyboard in Resources */,
 				7AAA66CA2053073D0006DC5C /* MainVCSettings.json in Resources */,
 				7A2D7F9120504E56004FC401 /* Assets.xcassets in Resources */,
+				0329380F2056C98A007415A9 /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,11 +558,15 @@
 				7AAA66CE2054D7300006DC5C /* BaseTableViewController.swift in Sources */,
 				7AAA66C0205301D80006DC5C /* MainViewController.swift in Sources */,
 				7AAA66D420558D360006DC5C /* TitleButton.swift in Sources */,
+				032938132056D65E007415A9 /* NetWorkTools.swift in Sources */,
+				7AAA6714205679AB0006DC5C /* PopoverPresentationController.swift in Sources */,
 				7AAA66C42053025B0006DC5C /* MessageTableViewController.swift in Sources */,
+				7AAA67162056865F0006DC5C /* PopoverAnimator.swift in Sources */,
 				7AAA66C82053027F0006DC5C /* DiscoverTableViewController.swift in Sources */,
 				7AAA66D02054D8C90006DC5C /* VisitorView.swift in Sources */,
 				7A2D7F8A20504E56004FC401 /* AppDelegate.swift in Sources */,
 				7AAA66D22055891C0006DC5C /* UIBarButtonItem+Category.swift in Sources */,
+				032938112056CACA007415A9 /* QRCodeViewController.swift in Sources */,
 				7AAA66CC2054C7900006DC5C /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
