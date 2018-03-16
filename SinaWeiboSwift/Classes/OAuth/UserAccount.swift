@@ -19,7 +19,14 @@ class UserAccount: NSObject, NSCoding {
     var uid:String?
     
     /// 保存用户过期时间
-    var expires_Date: Date?
+    var expires_Date: Date? {
+        // 重写settter方法
+        didSet{
+            // 根据过期的秒数, 生成真正地过期时间
+            expires_Date = Date(timeIntervalSinceNow: expires_in!.doubleValue)
+//            print(expires_Date!)
+        }
+    }
     
     /// 用户头像地址（大图），180×180像素
     var avatar_large: String?

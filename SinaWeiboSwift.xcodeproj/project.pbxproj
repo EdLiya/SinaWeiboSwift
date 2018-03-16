@@ -12,6 +12,7 @@
 		032938EB2057B6BC007415A9 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938EA2057B6BC007415A9 /* NetWorkTools.swift */; };
 		032938ED2057B76F007415A9 /* Sting+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938EC2057B76F007415A9 /* Sting+Category.swift */; };
 		032938F02057BB7B007415A9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938EF2057BB7B007415A9 /* Global.swift */; };
+		0343DD16205C481900A1B21E /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0343DD15205C481900A1B21E /* NewFeatureViewController.swift */; };
 		7A2D7F8A20504E56004FC401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F8920504E56004FC401 /* AppDelegate.swift */; };
 		7A2D7F9120504E56004FC401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9020504E56004FC401 /* Assets.xcassets */; };
 		7A2D7F9F20504E57004FC401 /* SinaWeiboSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9E20504E57004FC401 /* SinaWeiboSwiftTests.swift */; };
@@ -57,6 +58,7 @@
 		032938EA2057B6BC007415A9 /* NetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		032938EC2057B76F007415A9 /* Sting+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sting+Category.swift"; sourceTree = "<group>"; };
 		032938EF2057BB7B007415A9 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		0343DD15205C481900A1B21E /* NewFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		721D07410CABE70FE25A706A /* Pods-SinaWeiboSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiboSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiboSwift/Pods-SinaWeiboSwift.release.xcconfig"; sourceTree = "<group>"; };
 		7A2D7F8620504E56004FC401 /* SinaWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2D7F8920504E56004FC401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 				7A2D7FC420505182004FC401 /* Home */,
 				7A2D7FCA20505182004FC401 /* Main */,
 				7A2D7FCC20505182004FC401 /* Message */,
-				7A2D7FCD20505182004FC401 /* NewFeature */,
+				7A2D7FCD20505182004FC401 /* NewFeature-新特性 */,
 				7A2D7FCE20505182004FC401 /* OAuth */,
 				7A2D7FCF20505182004FC401 /* Profile */,
 				7A2D7FD020505182004FC401 /* Tools */,
@@ -287,11 +289,12 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
-		7A2D7FCD20505182004FC401 /* NewFeature */ = {
+		7A2D7FCD20505182004FC401 /* NewFeature-新特性 */ = {
 			isa = PBXGroup;
 			children = (
+				0343DD15205C481900A1B21E /* NewFeatureViewController.swift */,
 			);
-			path = NewFeature;
+			path = "NewFeature-新特性";
 			sourceTree = "<group>";
 		};
 		7A2D7FCE20505182004FC401 /* OAuth */ = {
@@ -552,6 +555,7 @@
 				7AAA66C62053026C0006DC5C /* ProfileTableViewController.swift in Sources */,
 				7AAA66CE2054D7300006DC5C /* BaseTableViewController.swift in Sources */,
 				7AAA66C0205301D80006DC5C /* MainViewController.swift in Sources */,
+				0343DD16205C481900A1B21E /* NewFeatureViewController.swift in Sources */,
 				032938152056E0DE007415A9 /* OAuthViewController.swift in Sources */,
 				032938E92057B4BA007415A9 /* UserAccount.swift in Sources */,
 				032938EB2057B6BC007415A9 /* NetWorkTools.swift in Sources */,

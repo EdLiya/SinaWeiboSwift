@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = MainViewController()
+        window?.rootViewController =  NewFeatureViewController() //  MainViewController()
         window?.makeKeyAndVisible()
         
         // 设置导航条和工具条的外观

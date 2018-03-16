@@ -8,13 +8,12 @@
 
 import UIKit
 import SVProgressHUD
+import YYKit
+
+
 
 class OAuthViewController: UIViewController {
 
-    let App_Key = "4294202694"
-    let App_Secret = "00926e62e7d052087514cd1f9ed08fdc"
-    let Redirect_uri = "http://user.qzone.qq.com/763041363/main"
-    
     override func loadView() {
         view = webView
     }
@@ -22,7 +21,7 @@ class OAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "小王霸学习机"
+        navigationItem.title = APP_title
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(close))
         
         // 获取未授权的RequestToken
@@ -114,7 +113,7 @@ extension OAuthViewController : UIWebViewDelegate {
             print("授权成功")
              // 取出授权成功的RequestToken
             // code=aa7a2ab9874befe342a332c96ea70e27
-            // TODO  没有code= 的时候会崩
+            /// TODO  没有code= 的时候会崩
             let code  = codeStr[codeStr.index(after: codeStr.index(of: "=")!)...]
             print(code)
             
