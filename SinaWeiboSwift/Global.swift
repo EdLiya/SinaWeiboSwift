@@ -17,6 +17,10 @@ let Redirect_uri = "http://user.qzone.qq.com/763041363/main"
 let APP_title = "小王霸学习机"
 
 
+// keys
+
+let bundleVersionKey = "CFBundleShortVersionString"
+
 /// 切换控制器
 let XMGSwitchRootViewController = Notification.Name("XMGSwitchRootViewController")
 

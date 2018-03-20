@@ -8,8 +8,16 @@
 
 import UIKit
 
+let XMGHomeReuseIdentifier = "XMGHomeReuseIdentifier"
 class HomeTableViewController: BaseTableViewController {
 
+    /// 保存微博数组
+    var statuses: [Status]? {
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +28,28 @@ class HomeTableViewController: BaseTableViewController {
         
         // 初始化导航条按钮
         setupNavgationItem()
+        
+        
+        // 注册一个cell
+        tableView.register(StatusTableViewCell.self, forCellReuseIdentifier: XMGHomeReuseIdentifier)
+        
+        tableView.rowHeight = 200
+//        tableView.estimatedRowHeight = 200
+//        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
+        
+        loadData()
     }
 
+    private func loadData() {
+        Status.loadStatuses { (statusArray, error) in
+            guard error == nil else { return }
+            
+            self.statuses = statusArray
+//            print(statusArray)
+        }
+    }
+    
     // MARK: - 内部控制方法
     /**
      初始化导航条按钮
@@ -53,24 +81,25 @@ class HomeTableViewController: BaseTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return statuses?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: XMGHomeReuseIdentifier, for: indexPath) as! StatusTableViewCell
 
-        // Configure the cell...
+        let status = statuses![indexPath.row]
+        
+        cell.status = status
+//        cell.textLabel?.text = status.text
 
         return cell
     }
-    */
+   
 
     /*
     // Override to support conditional editing of the table view.

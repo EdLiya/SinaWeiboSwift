@@ -156,6 +156,9 @@ private class NewfeatureCell: UICollectionViewCell {
     
     @objc func startBtnClick()  {
         print("startBtnClick")
+        // 去主页, 注意点: 企业开发中如果要切换根控制器, 最好都在appdelegate中切换
+        
+        NotificationCenter.default.post(name: XMGSwitchRootViewController, object: true)
     }
     
     lazy var iconView = UIImageView()

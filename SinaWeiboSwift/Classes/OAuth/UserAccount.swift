@@ -11,15 +11,15 @@ import UIKit
 class UserAccount: NSObject, NSCoding {
 
     /// 用于调用access_token，接口获取授权后的access token。
-    var access_token: String?
+   @objc var access_token: String?
     /// access_token的生命周期，单位是秒数。
-    var expires_in: NSNumber?
+   @objc var expires_in: NSNumber?
     
     /// 当前授权用户的UID。
-    var uid:String?
+   @objc var uid:String?
     
     /// 保存用户过期时间
-    var expires_Date: Date? {
+   @objc var expires_Date: Date? {
         // 重写settter方法
         didSet{
             // 根据过期的秒数, 生成真正地过期时间
@@ -29,9 +29,11 @@ class UserAccount: NSObject, NSCoding {
     }
     
     /// 用户头像地址（大图），180×180像素
-    var avatar_large: String?
+   @objc var avatar_large: String?
     /// 用户昵称
-    var screen_name: String?
+   @objc var screen_name: String?
+    
+//    var isRealName: Bool?
     
     // --------------------------------
     /// 保存路径
@@ -47,8 +49,24 @@ class UserAccount: NSObject, NSCoding {
         setValuesForKeys(dict)
     }
     
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+    }
+    
+    override var description: String {
+        // 1.定义属性数组
+        let properties = ["access_token", "expires_in", "uid", "expires_Date", "avatar_large", "screen_name"]
+        
+        // 2.根据属性数组, 将属性转换为字典
+        let dict = dictionaryWithValues(forKeys: properties)
+        // 3.将字典转换为字符串
+        return "\(dict)"
+        
+    }
     ///  保存账户信息
     func saveAccount(){
+        print(UserAccount.accountPath)
         NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPath)
     }
     
@@ -114,6 +132,7 @@ class UserAccount: NSObject, NSCoding {
         aCoder.encode(expires_Date, forKey: "expires_Date")
         aCoder.encode(avatar_large, forKey: "avatar_large")
         aCoder.encode(screen_name, forKey: "screen_name")
+//        aCoder.encode(isRealName, forKey: "isRealName")
     }
     
     // 解档
@@ -125,6 +144,7 @@ class UserAccount: NSObject, NSCoding {
         expires_Date = aDecoder.decodeObject(forKey:"expires_Date") as? Date
         avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
         screen_name = aDecoder.decodeObject(forKey: "screen_name") as? String
+//        isRealName = aDecoder.decodeObject(forKey: "isRealName") as? Bool
     }
 }
 

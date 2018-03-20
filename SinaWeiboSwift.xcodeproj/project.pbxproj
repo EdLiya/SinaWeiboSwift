@@ -13,6 +13,11 @@
 		032938ED2057B76F007415A9 /* Sting+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938EC2057B76F007415A9 /* Sting+Category.swift */; };
 		032938F02057BB7B007415A9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032938EF2057BB7B007415A9 /* Global.swift */; };
 		0343DD16205C481900A1B21E /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0343DD15205C481900A1B21E /* NewFeatureViewController.swift */; };
+		0343DD18205D15E900A1B21E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0343DD17205D15E900A1B21E /* WelcomeViewController.swift */; };
+		03BD860C2060AAC9001132CB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BD860B2060AAC9001132CB /* Status.swift */; };
+		03BD860E2060B979001132CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BD860D2060B979001132CB /* User.swift */; };
+		03BD86102060BCBA001132CB /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BD860F2060BCBA001132CB /* StatusTableViewCell.swift */; };
+		03BD86122060DDC0001132CB /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BD86112060DDC0001132CB /* UIColor+Category.swift */; };
 		7A2D7F8A20504E56004FC401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F8920504E56004FC401 /* AppDelegate.swift */; };
 		7A2D7F9120504E56004FC401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9020504E56004FC401 /* Assets.xcassets */; };
 		7A2D7F9F20504E57004FC401 /* SinaWeiboSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D7F9E20504E57004FC401 /* SinaWeiboSwiftTests.swift */; };
@@ -59,6 +64,11 @@
 		032938EC2057B76F007415A9 /* Sting+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sting+Category.swift"; sourceTree = "<group>"; };
 		032938EF2057BB7B007415A9 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0343DD15205C481900A1B21E /* NewFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
+		0343DD17205D15E900A1B21E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		03BD860B2060AAC9001132CB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		03BD860D2060B979001132CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		03BD860F2060BCBA001132CB /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		03BD86112060DDC0001132CB /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		721D07410CABE70FE25A706A /* Pods-SinaWeiboSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeiboSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeiboSwift/Pods-SinaWeiboSwift.release.xcconfig"; sourceTree = "<group>"; };
 		7A2D7F8620504E56004FC401 /* SinaWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2D7F8920504E56004FC401 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				032938EC2057B76F007415A9 /* Sting+Category.swift */,
+				03BD86112060DDC0001132CB /* UIColor+Category.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -222,6 +233,9 @@
 				7A2D7FC820505182004FC401 /* QRCode */,
 				7A2D7FC920505182004FC401 /* Timeline */,
 				7AAA66C1205302340006DC5C /* HomeTableViewController.swift */,
+				03BD860F2060BCBA001132CB /* StatusTableViewCell.swift */,
+				03BD860B2060AAC9001132CB /* Status.swift */,
+				03BD860D2060B979001132CB /* User.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -293,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				0343DD15205C481900A1B21E /* NewFeatureViewController.swift */,
+				0343DD17205D15E900A1B21E /* WelcomeViewController.swift */,
 			);
 			path = "NewFeature-新特性";
 			sourceTree = "<group>";
@@ -554,12 +569,15 @@
 				7AAA66C2205302340006DC5C /* HomeTableViewController.swift in Sources */,
 				7AAA66C62053026C0006DC5C /* ProfileTableViewController.swift in Sources */,
 				7AAA66CE2054D7300006DC5C /* BaseTableViewController.swift in Sources */,
+				03BD86102060BCBA001132CB /* StatusTableViewCell.swift in Sources */,
 				7AAA66C0205301D80006DC5C /* MainViewController.swift in Sources */,
 				0343DD16205C481900A1B21E /* NewFeatureViewController.swift in Sources */,
 				032938152056E0DE007415A9 /* OAuthViewController.swift in Sources */,
 				032938E92057B4BA007415A9 /* UserAccount.swift in Sources */,
 				032938EB2057B6BC007415A9 /* NetWorkTools.swift in Sources */,
+				03BD860E2060B979001132CB /* User.swift in Sources */,
 				7AAA66D420558D360006DC5C /* TitleButton.swift in Sources */,
+				0343DD18205D15E900A1B21E /* WelcomeViewController.swift in Sources */,
 				032938F02057BB7B007415A9 /* Global.swift in Sources */,
 				7AAA66C42053025B0006DC5C /* MessageTableViewController.swift in Sources */,
 				7AAA66C82053027F0006DC5C /* DiscoverTableViewController.swift in Sources */,
@@ -567,6 +585,8 @@
 				7A2D7F8A20504E56004FC401 /* AppDelegate.swift in Sources */,
 				7AAA66D22055891C0006DC5C /* UIBarButtonItem+Category.swift in Sources */,
 				7AAA66CC2054C7900006DC5C /* NullViewController.swift in Sources */,
+				03BD86122060DDC0001132CB /* UIColor+Category.swift in Sources */,
+				03BD860C2060AAC9001132CB /* Status.swift in Sources */,
 				032938ED2057B76F007415A9 /* Sting+Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

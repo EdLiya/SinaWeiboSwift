@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController {
 
     // 定义一个变量保存用户当前是否登录
-    var userLogin = false
+    var userLogin = UserAccount.isUserLogin()
     // 定义属性保存未登录界面
     var visitorView: VisitorView?
     
@@ -20,7 +20,24 @@ class BaseTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // 如果没有登录就设置未登录界面信息
+        if !userLogin {
+            
+            if self is HomeTableViewController {
+                print("home")
+                visitorView?.setupVisitorInfo(isHome: true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+            } else if self is MessageTableViewController {
+                print("message")
+                visitorView?.setupVisitorInfo(isHome: false, imageName: "visitordiscover_image_message", message: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知")
+            } else if self is DiscoverTableViewController {
+                print("discover")
+                visitorView?.setupVisitorInfo(isHome: false, imageName: "visitordiscover_image_message", message: "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过")
+            } else if self is ProfileTableViewController {
+                visitorView?.setupVisitorInfo(isHome: false, imageName: "visitordiscover_image_profile", message: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人")
+            }
+            
+        }
     }
 
     

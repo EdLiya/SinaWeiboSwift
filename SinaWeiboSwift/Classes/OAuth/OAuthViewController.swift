@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 import YYKit
-
+import WebKit
 
 
 class OAuthViewController: UIViewController {
@@ -29,7 +29,7 @@ class OAuthViewController: UIViewController {
         let url = URL(string: urlStr)
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
-        
+//            mWebView.load(request)
     }
 
     @objc func close () {
@@ -70,7 +70,9 @@ class OAuthViewController: UIViewController {
                     
                     // 加载完毕后, 归档账户数据
                     account?.saveAccount()
-                    NotificationCenter.default.post(name: XMGSwitchRootViewController, object: nil)
+                    
+                    // 去欢迎界面
+                    NotificationCenter.default.post(name: XMGSwitchRootViewController, object: false)
                 } else {
                     SVProgressHUD.setStatus("网络不给力...")
                 }
@@ -92,6 +94,39 @@ class OAuthViewController: UIViewController {
         return webView
     }()
 
+    // MARK: - 懒加载
+//    private lazy var mWebView : WKWebView = {
+//        let webView = WKWebView()
+//
+//        webView.navigationDelegate = self
+//
+//        return webView
+//    }()
+}
+
+
+extension OAuthViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("didStartProvisionalNavigation")
+        
+        print(webView.url!.absoluteString)
+        
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        
+        print(webView.url!.absoluteString)
+        print("didCommit")
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("didFail")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("didFinish")
+    }
 }
 
 extension OAuthViewController : UIWebViewDelegate {
@@ -127,7 +162,7 @@ extension OAuthViewController : UIWebViewDelegate {
         }
         
 
-        return false
+        return true
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
